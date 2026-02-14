@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vall ❤️ My Valentine</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+      margin:0;
+        height:100vh;
+          font-family:'Poppins',sans-serif;
+            background:radial-gradient(circle at top,#2b0036,#000);
+              display:flex;
+                justify-content:center;
+                  align-items:center;
+                    overflow:hidden;
+                      color:white;
+                        perspective:1200px;
+}
+
+/* Floating hearts */
+.heart{
+      position:absolute;
+        color:#ff4f81;
+          animation:float 6s linear infinite;
+            opacity:0.8;
+}
+@keyframes float{
+      from{transform:translateY(100vh) scale(0.5);}
+        to{transform:translateY(-10vh) scale(1.2);opacity:0;}
+}
+
+/* Card */
+.card{
+      width:400px;
+        min-height:520px;
+          background:linear-gradient(145deg,#ff2e63,#ff7eb3);
+            border-radius:30px;
+              box-shadow:0 25px 60px rgba(0,0,0,0.8);
+                padding:25px;
+                  text-align:center;
+                    transform-style:preserve-3d;
+                      transition:1s;
+}
+.card:hover{
+      transform:rotateY(10deg) rotateX(8deg);
+}
+
+/* Gold Name */
+.gold{
+      font-size:28px;
+        font-weight:700;
+          background:linear-gradient(45deg,#ffd700,#fff8dc,#ffd700);
+            -webkit-background-clip:text;
+              -webkit-text-fill-color:transparent;
+                animation:shine 3s infinite linear;
+}
+@keyframes shine{
+      0%{background-position:0%;}
+        100%{background-position:200%;}
+}
+
+/* 3D Image Gallery */
+.gallery{
+      position:relative;
+        width:200px;
+          height:200px;
+            margin:20px auto;
+              transform-style:preserve-3d;
+                animation:rotate 15s infinite linear;
+}
+.gCould you write me a code wishing my girlfriend a happy birthday and also could you write the cod eto make it easy to send it to herCould you write me a code wishing my girlfriend a happy birthday and also could you write the cod eto make it easy to send it to herallery img{
+      position:absolute;
+        width:200px;
+          height:200px;
+            object-fit:cover;
+              border-radius:20px;
+                box-shadow:0 10px 25px rgba(0,0,0,0.6);
+}
+.gallery img:nth-child(1){
+      transform:rotateY(0deg) translateZ(120px);
+}
+.gallery img:nth-child(2){
+      transform:rotateY(180deg) translateZ(120px);
+}
+@keyframes rotate{
+      from{transform:rotateY(0deg);}
+        to{transform:rotateY(360deg);}
+}
+
+button{
+      padding:10px 20px;
+        margin:8px;
+          border:none;
+            border-radius:30px;
+              background:white;
+                color:#ff2e63;
+                  font-weight:bold;
+                    cursor:pointer;
+                      transition:0.3s;
+}
+button:hover{
+      background:black;
+        color:white;
+}
+
+.glow{
+      animation:glow 2s infinite alternate;
+}
+@keyframes glow{
+      from{text-shadow:0 0 10px white;}
+        to{text-shadow:0 0 30px pink,0 0 50px red;}
+}
+
+canvas{
+      position:absolute;
+        top:0;
+          left:0;
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="card" id="game">
+    <div class="gold">Vall ❤️</div>
+
+      <div class="gallery">
+          <img src="vall1.jpg">
+              <img src="vall2.jpg">
+                </div>
+
+                  <p id="question">Question 1: Who is the most breathtaking girl alive?</p>
+                    <button onclick="next()">Vall 💕</button>
+                      <button onclick="wrong()">Someone else</button>
+                      </div>
+
+                      <canvas id="fireworks"></canvas>
+
+                      <script>
+                      let stage=1;
+
+                      function next(){
+                          if(stage===1){
+                                document.getElementById("question").innerHTML=
+                                    "Question 2: Who owns my heart completely?";
+                                        stage++;
+                          }
+                            else if(stage===2){
+                                    document.getElementById("question").innerHTML=
+                                        "Final Question: Will you be my Valentine forever? 💍";
+                                            document.getElementById("game").innerHTML+=
+                                                "<br><button onclick='yes()'>YES 💖</button>"+
+                                                    "<button onclick='no()'>No 😅</button>";
+                                                        stage++;
+                            }
+                      }
+
+                      function wrong(){
+                          alert("Wrong answer 😌 You know it's Vall.");
+                      }
+
+                      function no(){
+                          alert("That option expired 😏 Try again.");
+                      }
+
+                      function yes(){
+                          document.getElementById("game").innerHTML=
+                            "<h1 class='glow'>Happy Valentine's Day Vall ❤️</h1>"+
+                              "<p style='font-size:16px; line-height:1.8; margin:20px 0;'>"+
+                                "This isn't just a Valentine's message.<br>"+
+                                "It's something created only for you—<br>"+
+                                "an experience reflecting how much you mean to me.<br><br>"+
+                                "The glow, the colors, the music, the way your photos move—<br>"+
+                                "all of it represents how you stay on my mind,<br>"+
+                                "like beautiful memories that replay endlessly in my heart."+
+                              "</p>"+
+                              "<p style='font-size:14px; margin-top:30px;'>💌 Click anywhere for your full message...</p>";
+                                    startFireworks();
+                                      document.body.onclick=secret;
+                      }
+
+                      function secret(){
+                          const message = `Vall,
+
+You don't just enter a room; you shift the entire atmosphere. There's something naturally powerful about you. The way you carry yourself. The quiet confidence in your eyes. The balance of softness and strength that lives within you.
+
+You are the calm in my chaos. The light in my ordinary days. The reason I catch myself smiling without realizing why.
+
+I didn't want to give you something ordinary. I wanted more than just words. I wanted something that feels like you—warm, unforgettable, and full of life.
+
+When the hearts float, when the lights glow, when the fireworks burst across the screen, understand that each effect symbolizes how you make my world feel—bright, alive, and complete.
+
+Today isn't about love in general. It's about you. About us. About choosing each other—not just today, but again and again.
+
+You are my peace, my happiness, my forever choice.
+
+Happy Valentine's Day ❤️
+
+P.S. I choose you in every lifetime.`;
+                          
+                          alert(message);
+                      }
+
+                      /* Floating Hearts */
+                      setInterval(()=>{
+                          let h=document.createElement("div");
+                            h.className="heart";
+                              h.innerHTML="❤️";
+                                h.style.left=Math.random()*100+"vw";
+                                  h.style.fontSize=(Math.random()*20+10)+"px";
+                                    document.body.appendChild(h);
+                                      setTimeout(()=>h.remove(),6000);
+                      },300);
+
+                      /* Fireworks */
+                      let canvas=document.getElementById("fireworks");
+                      let ctx=canvas.getContext("2d");
+                      canvas.width=window.innerWidth;
+                      canvas.height=window.innerHeight;
+                      let particles=[];
+
+                      function startFireworks(){
+                          setInterval(()=>{
+                                for(let i=0;i<100;i++){
+                                          particles.push({
+                                                    x:canvas.width/2,
+                                                            y:canvas.height/2,
+                                                                    dx:(Math.random()-0.5)*8,
+                                                                            dy:(Math.random()-0.5)*8,
+                                                                                    life:100
+                                          });
+                                }
+                          },800);
+                      }
+
+                      function animate(){
+                          ctx.fillStyle="rgba(0,0,0,0.2)";
+                            ctx.fillRect(0,0,canvas.width,canvas.height);
+                              particles.forEach((p,i)=>{
+                                    p.x+=p.dx;
+                                        p.y+=p.dy;
+                                            p.life--;
+                                                ctx.fillStyle="pink";
+                                                    ctx.fillRect(p.x,p.y,2,2);
+                                                        if(p.life<=0)particles.splice(i,1);
+                              });
+                                requestAnimationFrame(animate);
+                      }
+                      animate();
+                      </script>
+
+                      </body>
+                      </html>
+                              })
+                      }
+                                          })
+                                }
+                          })
+                      }
+                      })
+                      }
+                      }
+                      }
+                      }
+                            }
+                          }
+                      }
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
